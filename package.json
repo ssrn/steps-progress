@@ -1,0 +1,33 @@
+{
+  "name": "steps",
+  "version": "0.1.1",
+  "scripts": {
+    "ghpages": "git subtree push --prefix build origin gh-pages",
+    "build": "gulp build --production",
+    "start": "gulp"
+  },
+  "authors": "Svetlana Kondratyeva <pe6i.is4o@gmail.com>",
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.0",
+    "browser-sync": "^2.12.3",
+    "chroma-sass": "^1.2.4",
+    "del": "^2.2.0",
+    "eslint": "^2.9.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "2.3.1",
+    "gulp-sass-lint": "^1.1.1",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "node-sass-import-once": "^1.2.0",
+    "sass-lint": "^1.7.0",
+    "support-for": "^1.0.6",
+    "typey": "^1.0.0"
+  }
+}

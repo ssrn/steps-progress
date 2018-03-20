@@ -1,0 +1,268 @@
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.progressbar {
+  margin: 80px 0;
+}
+
+.progressbar__wrap {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.progressbar__step {
+  list-style-type: none;
+  position: relative;
+  width: 33.3333%;
+  float: left;
+  color: #ccc;
+  font-size: 16px;
+  text-align: center;
+  height: 60px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: -5px;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+  }
+
+  &--success,
+  &--progress {
+    color: green;
+  }
+
+  &--success:before {
+    background-color: green;
+    border-color: green;
+  }
+
+  &--progress-warning {
+    color: orange;
+  }
+
+  &--danger {
+    color: red;
+
+    &:before {
+      background-color: red;
+      border-color: red;
+    }
+  }
+}
+
+.step__text-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.progressbar__line {
+  display: block;
+  position: absolute;
+  left: -50%;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  margin-top: -1px;
+  padding: 0 6px;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    z-index: -1;
+  }
+}
+
+.detailed-progressbar {
+  .progressbar__step {
+    &:before {
+      left: 100%;
+    }
+
+    &:first-child:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: -5px;
+      text-align: center;
+      background-color: green;
+      border: 2px solid green;
+      border-radius: 50%;
+    }
+  }
+
+  .progressbar__line {
+    left: 0;
+  }
+
+  .progressbar__step--success .progressbar__line:before {
+    background-color: green;
+  }
+
+  .progressbar__step--progress .progressbar__line:before {
+    background: linear-gradient(to right, green, #ccc);
+  }
+
+  .progressbar__step--progress-warning .progressbar__line:before {
+    background: linear-gradient(to right, orange, #ccc);
+  }
+
+  .progressbar__step--danger .progressbar__line:before {
+    background-color: red;
+  }
+}
+
+.compact-progressbar {
+  .progressbar__step {
+    &--progress:before {
+      border-color: green;
+    }
+
+    &--progress-warning:before {
+      border-color: orange;
+    }
+  }
+
+  .progressbar__step--success + .progressbar__step .progressbar__line:before {
+    background-color: green;
+  }
+
+  .progressbar__step--success + .progressbar__step--danger .progressbar__line:before {
+    background: linear-gradient(to right, green, red);
+  }
+
+  .progressbar__step--progress + .progressbar__step .progressbar__line:before {
+    background: linear-gradient(to right, green, #ccc);
+  }
+
+  .progressbar__step--progress-warning + .progressbar__step .progressbar__line:before {
+    background: linear-gradient(to right, orange, #ccc);
+  }
+}
+
+.items {
+  width: 910px;
+  position: relative;
+  margin: 150px auto;
+}
+
+.items__row {
+  &:first-child {
+    .item {
+      &:first-child {
+        padding: 0 60px 50px 0;
+      }
+
+      &:last-child {
+        padding: 0 0 50px 60px;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    .item {
+      &:first-child {
+        padding: 50px 60px 0 0;
+      }
+
+      &:last-child {
+        padding: 50px 0 0 60px;
+      }
+    }
+  }
+}
+
+.item {
+  position: relative;
+  width: 50%;
+  float: left;
+
+  &--finances .item__title {
+    color: red;
+  }
+
+  &--business-risks .item__title {
+    color: orange;
+  }
+}
+
+.item__title {
+  font-size: 18px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.item__text {
+  font-size: 14px;
+}
+
+.items__diagram {
+  position: absolute;
+  top: 50% ;
+  left: 50%;
+  margin-top: -65px;
+  margin-left: -58px;
+}
+
+.diagram__row {
+  &:first-child .diagram__quarter {
+    vertical-align: bottom;
+  }
+
+  &:last-child .diagram__quarter {
+    vertical-align: top;
+  }
+}
+
+.diagram__quarter {
+  display: inline-block;
+  margin: 2px 0;
+  border-radius: 50%;
+
+  &--legal-risks {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50px 0 0 0;
+  }
+
+  &--finances {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 0 60px 0 0;
+  }
+
+  &--contracts {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 0 0 0 50px;
+  }
+
+  &--business-risks {
+    width: 60px;
+    height: 60px;
+    background-color: orange;
+    border-radius: 0 0 60px 0;
+  }
+}
